@@ -8,14 +8,14 @@ interface Props {
 
 const { title, description } = Astro.props;
 
-// 모든 블로그 글에서 'category'를 중복 없이 가져오기
 const posts = await getCollection('blog');
+// post.data.category가 string임을 확신하므로, Set으로 변환해도 string[] 타입으로 유지합니다.
 const categories = [...new Set(posts.map((post) => post.data.category))];
 ---
 <!doctype html>
 <html lang="en">
 	<head>
-		{/* head 부분은 이전과 동일하게 유지 */}
+		{/* head 부분은 그대로 유지 */}
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -33,10 +33,10 @@ const categories = [...new Set(posts.map((post) => post.data.category))];
 				<a href="/" class="text-2xl font-bold">Ultimate PH Hub</a>
 				<ul class="flex space-x-6 text-lg items-center">
 					<li><a href="/" class="hover:underline">Home</a></li>
-					{/* 동적으로 생성된 카테고리 메뉴 */}
+					{/* (category as string)으로 타입 단언 추가 */}
 					{categories.map((category) => (
 						<li>
-							<a href={`/category/${category.toLowerCase()}`} class="hover:underline capitalize">
+							<a href={`/category/${(category as string).toLowerCase()}`} class="hover:underline capitalize">
 								{category}
 							</a>
 						</li>
