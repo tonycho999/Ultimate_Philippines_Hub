@@ -1,43 +1,52 @@
 ---
+import { getCollection } from 'astro:content';
+
 interface Props {
 	title: string;
 	description: string;
 }
 
 const { title, description } = Astro.props;
----
 
+// 모든 블로그 글에서 'category'를 중복 없이 가져오기
+const posts = await getCollection('blog');
+const categories = [...new Set(posts.map((post) => post.data.category))];
+---
 <!doctype html>
 <html lang="en">
 	<head>
+		{/* head 부분은 이전과 동일하게 유지 */}
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		
-		<!-- SEO Meta Tags -->
 		<title>{title} | Ultimate Philippines Hub</title>
 		<meta name="description" content={description} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		
-		<!-- 기본 폰트 적용 (예: Inter) -->
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 	</head>
 	<body class="bg-gray-50 text-gray-900 font-inter">
-		<header class="bg-blue-600 text-white p-4 shadow-md">
-			<nav class="max-w-4xl mx-auto flex justify-between items-center">
+		<header class="bg-blue-600 text-white p-4 shadow-md sticky top-0 z-50">
+			<nav class="max-w-5xl mx-auto flex justify-between items-center">
 				<a href="/" class="text-2xl font-bold">Ultimate PH Hub</a>
-				<!-- 추후 카테고리 링크 추가 가능 -->
-				<ul class="flex space-x-4">
+				<ul class="flex space-x-6 text-lg items-center">
 					<li><a href="/" class="hover:underline">Home</a></li>
+					{/* 동적으로 생성된 카테고리 메뉴 */}
+					{categories.map((category) => (
+						<li>
+							<a href={`/category/${category.toLowerCase()}`} class="hover:underline capitalize">
+								{category}
+							</a>
+						</li>
+					))}
 				</ul>
 			</nav>
 		</header>
 		
-		<main class="max-w-4xl mx-auto p-4 my-8">
-			<slot /> <!-- 페이지 컨텐츠가 들어갈 자리 -->
+		<main class="max-w-5xl mx-auto p-4 my-8">
+			<slot />
 		</main>
 
 		<footer class="bg-gray-800 text-white text-center p-6 mt-12">
@@ -45,8 +54,6 @@ const { title, description } = Astro.props;
 		</footer>
 	</body>
 </html>
-
 <style is:global>
-	/* 글로벌 스타일 설정 (Tailwind CSS를 사용할 경우 생략 가능) */
 	body { font-family: 'Inter', sans-serif; }
 </style>
