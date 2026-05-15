@@ -1,31 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
-
 interface Props {
 	title: string;
 	description: string;
 }
 
 const { title, description } = Astro.props;
-
-const posts = await getCollection('blog');
-// post.data.category가 string임을 확신하므로, Set으로 변환해도 string[] 타입으로 유지합니다.
-const categories = [...new Set(posts.map((post) => post.data.category))];
 ---
 <!doctype html>
 <html lang="en">
 	<head>
 		{/* head 부분은 그대로 유지 */}
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Ultimate Philippines Hub</title>
-		<meta name="description" content={description} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+        {/* ... */}
 	</head>
 	<body class="bg-gray-50 text-gray-900 font-inter">
 		<header class="bg-blue-600 text-white p-4 shadow-md sticky top-0 z-50">
@@ -33,14 +18,8 @@ const categories = [...new Set(posts.map((post) => post.data.category))];
 				<a href="/" class="text-2xl font-bold">Ultimate PH Hub</a>
 				<ul class="flex space-x-6 text-lg items-center">
 					<li><a href="/" class="hover:underline">Home</a></li>
-					{/* (category as string)으로 타입 단언 추가 */}
-					{categories.map((category) => (
-						<li>
-							<a href={`/category/${(category as string).toLowerCase()}`} class="hover:underline capitalize">
-								{category}
-							</a>
-						</li>
-					))}
+					{/* 'Blog' 페이지로 가는 링크 추가 */}
+					<li><a href="/blog" class="hover:underline">Blog</a></li>
 				</ul>
 			</nav>
 		</header>
